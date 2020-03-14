@@ -1,3 +1,13 @@
+% This MATLAB script is written to see if there is a relation
+% between hand washing habits and number of coronavirus cases.
+% My sources are:
+% Source 1: https://www.statista.com/chart/4111/do-europeans-wash-their-hands-after-using-the-toilet
+% Source 2: https://hgis.uw.edu/virus
+% 
+% I uploaded the script to 
+% https://github.com/hkayabilisim/coronavisualizations
+
+% Author: Huseyin Kaya, 2020-03-14
 clear variables
 close all
 clc
@@ -22,12 +32,15 @@ for i=1:numel(countries)
     hold on
 end
 text(50,5*0.01,'Source 1: https://www.statista.com/chart/4111/do-europeans-wash-their-hands-after-using-the-toilet',...
-    'FontSize',12,...
+    'FontSize',13,...
         'FontName','CopperPlate','Color',[229 131 60]/255);
-text(50,3*0.01,'Source 2: https://hgis.uw.edu/virus',...
-    'FontSize',12,...
+text(50,4*0.01,'Source 2: https://hgis.uw.edu/virus',...
+    'FontSize',13,...
         'FontName','CopperPlate','Color',[229 131 60]/255);
-xlabel('% Who Automatically Wash Their Hands With Soap & Water After Going Toilet','FontName','CopperPlate','Color','w');
+text(50,0.0320,'Script: https://github.com/hkayabilisim/coronavisualizations',...
+    'FontSize',13,...
+        'FontName','CopperPlate','Color',[229 131 60]/255);
+    xlabel('% Who Automatically Wash Their Hands With Soap & Water After Going Toilet','FontName','CopperPlate','Color','w');
 %set(gca,'XTick',[],'YTick',[]);
 xlim([49 100])
 %ylim([0 102])
@@ -38,5 +51,6 @@ set(gca,'YSCale','log')
 set(gca,'fontname','CopperPlate') 
 box on
 grid on
-title('Are hand washing habits and coronavirus cases correlated?',...
+title('Are hand washing habits and coronavirus cases related?',...
     'Color',[229 131 60]/255);
+export_fig('handwashing.jpg');
